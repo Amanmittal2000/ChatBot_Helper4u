@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            know = {
+                "Maid" : "At what city/pincode do you whant to hire?<br>Kanpur/Jaipur/Mumbai/Delhi ",
+                "Chef" : "At what city/pincode do you whant to hire?<br>Kanpur/Jaipur/Mumbai/Delhi ",
+                "Driver" : "At what city/pincode do you whant to hire?<br>Kanpur/Jaipur/Mumbai/Delhi ",
+                "Nanny" : "At what city/pincode do you whant to hire?<br>Kanpur/Jaipur/Mumbai/Delhi",
+                "Jaipur": "Part time or full time?",
+                "Delhi": "Part time or full time?",
+                "Kanpur": "Part time or full time?",
+                "Mumbai": "Part time or full time?",
+                "Part Time":"Morning/Evening/Night?",
+                "Morning": "Here is the link of what are you looking for..<br> Nice talking to you. Bye",
+                "Evening": "Here is the link of what are you looking for..<br>Nice talking to you. Bye",
+                "Night": "Here is the link of what are you looking for..<br>Nice talking to you. Bye",
+                "Full Time":"Here is the link of what are you looking for..<br>Nice talking to you. Bye"
+            };
+            function talk() {
+                var user = document.getElementById("userBox").value;
+                document.getElementById("userBox").value = "";
+                document.getElementById("chatLog").innerHTML += user+"<br>";              
+                if (user in know) {
+                    document.getElementById("chatLog").innerHTML += know[user]+"<br>";
+                } else {
+                    document.getElementById("chatLog").innerHTML += "I don't understand...<br>";
+                }
+            } 
+        </script>
+    </head>
+    <body>
+        <p id="chatLog">- - CHAT BOT- -<br><img id="image" src="ChatBotIconImage.png" onclick="openBot()"  width="100px"><br> Hey, welcome to Helper4u <br> Who do you want to hire? <br>Driver/Nanny/Chef/Maid</p>        
+        <input id="userBox" type="text" onkeydown="if (event.keyCode == 13) {talk()}">
+    </body>
+</html>
